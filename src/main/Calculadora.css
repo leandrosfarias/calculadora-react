@@ -2,7 +2,9 @@
     height: 320px;
     width: 235px;
     overflow: hidden;
-    background-color: red;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 48px 48px 48px 48px 48px;
 }
 
 
