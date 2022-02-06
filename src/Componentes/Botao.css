@@ -11,3 +11,28 @@
     border-bottom: var(--borda-botao);
     outline: none;
 }
+
+
+.botao:active {
+    background-color: #ccc;
+}
+
+
+.botao.dobro {
+    grid-column: span 2;
+}
+
+
+.botao.triplo {
+    grid-column: span 3;
+}
+
+
+.botao.operacao {
+    background-color: #fa8231;
+    color: #FFF;
+}
+
+.botao.operacao:active {
+    background-color: #fa8231cc;
+}
