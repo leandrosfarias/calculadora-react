@@ -8,7 +8,7 @@ const estadoInicial = {
     limparDisplay: false,
     operacao: null,
     valores: [0, 0],
-    current: 0
+    corrente: 0
 };
 
 export default class Calculadora extends Component {
@@ -31,7 +31,22 @@ export default class Calculadora extends Component {
     };
 
     addDigito(n) {
-        console.log(n);
+        if (n === '.' && this.state.displayValue.includes('.')) {
+            return;
+        };
+        const limparDisplay = this.state.valorDisplay === '0'
+            || this.state.limparDisplay;
+        const valorCorrente = limparDisplay ? '' : this.state.valorDisplay;
+        const valorDisplay = valorCorrente + n;
+        this.setState({ valorDisplay, limparDisplay: false, });
+
+        if (n !== '.') {
+            const i = this.state.corrente;
+            const novoValor = parseFloat(valorDisplay);
+            const valores = [...this.state.valores];
+            valores[i] = novoValor;
+            this.setState({ valores });
+        }
     };
 
     render() {
