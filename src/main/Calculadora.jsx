@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import './Calculadora.css';
 import Botao from "../Componentes/Botao";
+import Display from "../Componentes/Display";
 
 export default class Calculadora extends Component {
     render() {
         return (
             <div className="calculadora">
+                <Display value={100}/>
                 <Botao label="AC"/>
                 <Botao label="/"/>
                 <Botao label="7"/>
